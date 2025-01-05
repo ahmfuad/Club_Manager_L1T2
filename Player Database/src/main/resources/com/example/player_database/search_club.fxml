@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="564.0" prefWidth="799.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.player_database.SearchClubController">
+   <children>
+      <Text layoutX="324.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Search Club" wrappingWidth="150.4000000000001">
+         <font>
+            <Font name="Agency FB Bold" size="35.0" />
+         </font>
+      </Text>
+      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#goBack" text="← Back">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <TextField fx:id="clubName" layoutX="156.0" layoutY="67.0" prefHeight="26.0" prefWidth="294.0" promptText="Enter Club Name" />
+      <ChoiceBox fx:id="choice" accessibleRole="CHECK_MENU_ITEM" layoutX="460.0" layoutY="67.0" prefHeight="26.0" prefWidth="220.0" />
+      <Label fx:id="choiceLabel" alignment="CENTER" layoutX="-1.0" layoutY="113.0" prefHeight="42.0" prefWidth="799.0" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" visible="false" AnchorPane.bottomAnchor="409.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="113.0">
+         <font>
+            <Font name="Agency FB" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="clubNameLabel" alignment="CENTER" layoutY="171.0" prefHeight="42.0" prefWidth="800.0" textAlignment="CENTER" visible="false" AnchorPane.bottomAnchor="350.40000000000003" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="171.0">
+         <font>
+            <Font name="Bodoni MT" size="29.0" />
+         </font>
+      </Label>
+      <Label fx:id="salaryLabel" alignment="CENTER" layoutX="386.0" layoutY="274.0" prefHeight="42.0" prefWidth="799.0" textAlignment="CENTER" visible="false" AnchorPane.bottomAnchor="248.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="274.0">
+         <font>
+            <Font name="Bodoni MT" size="25.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tableByClub" layoutX="40.0" layoutY="174.0" prefHeight="389.0" prefWidth="734.0" visible="false">
+        <columns>
+          <TableColumn fx:id="nameByClub" prefWidth="319.9999809265137" text="Name" visible="false" />
+            <TableColumn fx:id="countryByClub" prefWidth="291.2000732421875" text="Country" visible="false" />
+          <TableColumn fx:id="button" minWidth="0.0" prefWidth="124.7999267578125" text="Details" visible="false" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

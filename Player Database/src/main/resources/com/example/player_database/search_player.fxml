@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="551.0" prefWidth="833.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.player_database.PlayerSearchController">
+   <children>
+      <Text layoutX="11.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" style="background: none;" text="Search Player" textAlignment="CENTER" wrappingWidth="141.35263061523438">
+         <font>
+            <Font name="Agency FB Bold" size="27.0" />
+         </font>
+      </Text>
+      <Button layoutX="744.0" layoutY="12.0" mnemonicParsing="false" onAction="#goBack" prefHeight="30.0" prefWidth="74.0" text="← Back" textAlignment="CENTER">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <TabPane layoutX="-1.0" layoutY="49.0" prefHeight="502.0" prefWidth="833.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="By Player Name">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="383.0" prefWidth="747.0">
+                     <children>
+                        <TextField fx:id="searchName" layoutX="260.0" layoutY="27.0" onAction="#SearchPlayerByName" prefHeight="26.0" prefWidth="270.0" />
+                        <Text layoutX="189.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter Name:" />
+                        <Button layoutX="537.0" layoutY="27.0" mnemonicParsing="false" onAction="#SearchPlayerByName" text="Search" />
+                        <Label fx:id="resultLabelName" layoutX="260.0" layoutY="104.0" text="Label" visible="false" />
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="By Country and Club">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="searchCountry" layoutX="223.0" layoutY="24.0" />
+                        <TextField fx:id="searchClub" layoutX="467.0" layoutY="24.0" onAction="#searchPlayerByCountryClub" />
+                        <Text layoutX="169.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Country:" />
+                        <Text layoutX="436.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Club:" />
+                        <Button layoutX="657.0" layoutY="24.0" mnemonicParsing="false" onAction="#searchPlayerByCountryClub" text="Search" />
+                        <TableView fx:id="tableByCountryClub" layoutX="223.0" layoutY="137.0" prefHeight="200.0" prefWidth="401.0" visible="false">
+                          <columns>
+                            <TableColumn fx:id="nameByCountryClub" prefWidth="282.39996337890625" text="Name" visible="false" />
+                            <TableColumn fx:id="detailsByCountryClub" prefWidth="234.39999389648438" text="Details" visible="false" />
+                          </columns>
+                        </TableView>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="By Position">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="tableByPosition" layoutX="191.0" layoutY="137.0" prefHeight="200.0" prefWidth="450.0" visible="false">
+                           <columns>
+                              <TableColumn fx:id="nameByPosition" prefWidth="322.4000549316406" text="First Name" visible="false" />
+                              <TableColumn fx:id="detailsByPosition" minWidth="0.0" prefWidth="127.9998779296875" text="View" visible="false" />
+                           </columns>
+                        </TableView>
+                        <TextField fx:id="searchPoisition" layoutX="342.0" layoutY="14.0" onAction="#searchPlayerByPosition" />
+                        <Text layoutX="255.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Player Position:" />
+                        <Button layoutX="506.0" layoutY="14.0" mnemonicParsing="false" onAction="#searchPlayerByPosition" text="Search" />
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="By Salary Range">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="tableBySalary" layoutX="191.0" layoutY="137.0" prefHeight="200.0" prefWidth="450.0" visible="false">
+                           <columns>
+                              <TableColumn fx:id="nameBySalary" prefWidth="322.4000549316406" text="First Name" visible="false" />
+                              <TableColumn fx:id="detailsBySalary" minWidth="0.0" prefWidth="127.9998779296875" text="View" visible="false" />
+                           </columns>
+                        </TableView>
+                        <Text layoutX="229.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Salary Range:" />
+                        <TextField fx:id="minSalary" layoutX="306.0" layoutY="16.0" prefHeight="26.0" prefWidth="118.0" promptText="Minimum Salary" />
+                        <TextField fx:id="maxSalary" layoutX="429.0" layoutY="16.0" onAction="#searchPlayerBySalary" prefHeight="26.0" prefWidth="118.0" promptText="Maximum Salary" />
+                        <Button layoutX="564.0" layoutY="17.0" mnemonicParsing="false" onAction="#searchPlayerBySalary" text="Search" />
+                        <Text layoutX="424.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-" />
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Country Wise Player Count">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="tableCountryWise" layoutX="171.0" layoutY="14.0" prefHeight="343.0" prefWidth="490.0">
+                          <columns>
+                            <TableColumn fx:id="country" prefWidth="246.39996337890625" text="Country" />
+                            <TableColumn fx:id="playerCount" prefWidth="243.99996948242188" text="Player Count" />
+                          </columns>
+                        </TableView>
+                        <Button layoutX="678.0" layoutY="14.0" mnemonicParsing="false" onAction="#countryWisePlayerCount" text="Get Countrywise Count" />
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

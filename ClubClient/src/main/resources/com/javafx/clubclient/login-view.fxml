@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.javafx.clubclient.LoginController" stylesheets="@style.css">
+   <children>
+      <!-- Centered VBox for Login Content -->
+      <VBox alignment="CENTER" layoutX="206.0" layoutY="101.0" prefHeight="310.0" prefWidth="388.0" spacing="20.0">
+         <!-- Title -->
+         <Label prefHeight="54.0" prefWidth="277.0" styleClass="title-label" text="Club Admin Login">
+            <font>
+               <Font name="Arial" size="35.0" />
+            </font>
+         </Label>
+
+         <!-- Username Field -->
+         <VBox spacing="5.0">
+            <Label styleClass="form-label" text="Club Name:" />
+            <TextField fx:id="username" promptText="Enter your club name" />
+         </VBox>
+
+         <!-- Password Field -->
+         <VBox spacing="5.0">
+            <Label styleClass="form-label" text="Password:" />
+            <PasswordField fx:id="password" prefHeight="26.0" prefWidth="418.0" promptText="Enter your password" />
+         </VBox>
+
+         <!-- Login Button -->
+         <Button onAction="#login" prefWidth="150.0" styleClass="button-primary" text="Login" />
+
+      </VBox>
+
+      <!-- Footer -->
+      <HBox alignment="CENTER" layoutX="300.0" layoutY="500.0" spacing="10.0" />
+   </children>
+</AnchorPane>
